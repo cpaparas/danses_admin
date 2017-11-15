@@ -1,0 +1,66 @@
+/*******************************body****************************/
+html{
+	
+
+}
+
+h1, h2, h3{
+	font-family: 'Hammersmith One', sans-serif;
+}
+
+
+
+/*******************************header***************************/
+body{
+	width: 100%;
+	background-color: #f2f2f2;
+
+}
+
+header{
+	background-color: #43669e;;
+	color: #fff;
+	height: 100px;
+}
+
+h1{
+	font-size: 2em;
+
+}
+
+/*******************************main***************************/
+
+	
+main {
+background-color: #f2f2f2;
+margin: 0 auto;
+}			
+
+nav{
+	background-color: #27477f;	
+	float: left;
+	padding: 40px;
+	height: 900px;
+}
+
+
+
+.sommaire{
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+#sommaire a{
+	padding-bottom: 15px;
+	display:block;
+	width: 100%;
+	color: #fff;
+}
+
+
+.item{
+padding: 30px;
+margin: 0 auto;
+display: inline-block;
+
+}
