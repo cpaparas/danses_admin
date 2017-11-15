@@ -9,21 +9,15 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-	<header>
-		<h1 class="text-center">Bienvenu dans le gestionaire pour la Danse</h1>
-
-		
-</header>
-
+	<?php
+		$h1 = "Bienvenue sur le gestionnaire de danse";
+		include('header.php');
+	?>
 <main>
 
-	<nav id="sommaire" class="col-2">
-
-			<a href="groupes_liste.php">Liste Des Groupes</a>
-			<a href="profiles_liste.php">Liste des profiles</a>
-			<a href="cours_liste.php">Cours</a>
-	</nav>
+	<?php 
+		include('nav.php');
+	?>
 
 	<div class="col-10 item ">
 		<h2>Hello</h2>
