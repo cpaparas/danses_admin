@@ -12,7 +12,7 @@ if (isset($_GET['id_profile'])) {
 
 $queryGrpe = $pdo->prepare('SELECT * FROM groupes');
 $queryGrpe->execute();
-$groupes = $queryGrpe->fetch(PDO::FETCH_ASSOC);
+$groupes = $queryGrpe->fetchAll(PDO::FETCH_ASSOC);
 
 $title = "Gestionnaire de danse - Formulaire de profile";
 include('header_technique.php');
@@ -29,8 +29,10 @@ include('header_technique.php');
 		?>
 		<div class="col-10 item ">
 			<form id="form_profile" method="POST" action="save_profile.php">
+				<p><i>Les champs suivis d'un * sont obligatoires</i></p>
 				<fieldset>
 					<input type="hidden" name="id" id="id" value="<?=isset($_GET["id_profile"]) ? $_GET["id_profile"] : "" ?>">
+					<input type="hidden" name="professeur" id="professeur" value="<?=isset($profile["professeur"]) ? $profile["professeur"] : "false" ?>">
 					<input type="hidden" name="date_creation" id="date_creation" value="<?=isset($profile["date_creation"]) ? $profileET["date_creation"] : "" ?>">
 					<div class="form-group">
 						<label for="email">Email * :</label>
@@ -85,10 +87,22 @@ include('header_technique.php');
 						<input class='form-control' type="text" placeholder="186" name="taille" id="taille" value="<?= isset($profile['taille']) ? $profile['taille'] : '' ?>">
 					</div>
 					<div class="checkbox">
-						<label for="professeur">Professeur</label>
-						<input type="checkbox" value="1" id="professeur" name="professeur" oncheck="alert('prof');">
+						<label for="cb_professeur">Professeur</label>
+						<input type="checkbox" value="1" id="cb_professeur" name="cb_professeur">
 					</div>
-
+					<div class="form-group" id="gropupes_profs">
+						<label for="id_groupe_prof">Pour le groupe :</label>
+						<select id="id_groupe_prof" name="id_groupe_prof" class='form-control'>
+							<option value="">---------------</option>
+							<?php
+								if ($groupes) {
+									foreach ($groupes as $grpe) {
+										echo '<option value="'.$grpe['id'].'">'.$grpe['nom'].'</option>';
+									}
+								}
+							?>
+						</select>
+					</div>
 
 
 					 <div class="form-group">
@@ -100,5 +114,6 @@ include('header_technique.php');
 			</form>
 		</div>
 	</main>
+	<script type="text/javascript" src="js/profile.js"></script>
 </body>
 </html>
