@@ -1,6 +1,6 @@
 <?php
 require('database.php');
-$query = $pdo->prepare('SELECT * FROM `profiles`');
+$query = $pdo->prepare('SELECT * FROM `profile`');
 
 $query->execute();
 $profiles = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +24,10 @@ include('header_technique.php');
 			<tr>
 				<th>ID</th>
 				<th>Nom</th>
-				<th>&Eacute;dition</th>
+                <th>Préom</th>
+                <th>Email</th>
+                <th>&Eacute;dition</th>
+                <th>Suppression</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -34,7 +37,10 @@ include('header_technique.php');
 					echo "<tr>";
 					echo "<td>".$profile['id']."</td>";
 					echo "<td>".$profile['nom']."</td>";
+                    echo "<td>".$profile['prenom']."</td>";
+                    echo "<td>".$profile['email']."</td>";
 					echo "<td><input class='btn' type=\"button\" onclick=\"window.location.href='form_profile.php?id_profile=".$profile['id']."'\" value='Modifier' /></td>";
+                    echo "<td><input class='btn' type=\"button\" onclick=\"window.location.href='delete_profile.php?id_profile=".$profile['id']."'\" value='Supprimer' /></td>";
 					echo "</tr>";
 				}
 			?>
