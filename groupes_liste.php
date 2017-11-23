@@ -36,6 +36,7 @@ $groupes = $query->fetchAll(PDO::FETCH_ASSOC);
 				<th>Horaires</th>
 				<th>Lieu</th>
 				<th>&Eacute;dition</th>
+                <th>Suppression</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -47,8 +48,9 @@ $groupes = $query->fetchAll(PDO::FETCH_ASSOC);
 					echo "<td>".$groupe['nom']."</td>";
 					echo "<td>Le ".$groupe['jour']." de ".$groupe['heure_debut']." à ".$groupe['heure_fin']."</td>";
 					echo "<td>Au ".$groupe['adresse']." ".$groupe['code_postal']." ".$groupe['ville']."</td>";
-					echo "<td><input class='btn' type=\"button\" onclick=\"window.location.href='form_groupe.php?id_groupe=".$groupe['id']."'\" value='Modifier' /></td>";
-					echo "</tr>";
+                    echo "<td><input class='btn' type=\"button\" onclick=\"window.location.href='form_groupe.php?id_groupe=".$groupe['id']."'\" value='Modifier' /></td>";
+                    echo "<td><input class='btn' type=\"button\" onclick=\"window.location.href='delete_groupe.php?id_groupe=".$groupe['id']."'\" value='Supprimer' /></td>";
+                    echo "</tr>";
 				}
 			?>
 		</tbody>
