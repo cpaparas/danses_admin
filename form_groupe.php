@@ -9,18 +9,9 @@ if (isset($_GET['id_groupe'])) {
 	$groupe = $query->fetch(PDO::FETCH_ASSOC);
 
 }
-
+$title = "Gestionnaire de danse - Formulaire du groupe";
+include('header_technique.php');
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-	<meta charset="utf-8">
-	<title>formulaire du groupe</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=GFS+Didot|Hammersmith+One" rel="stylesheet"> 
-	<link rel="stylesheet" href="css/style.css">
-</head>
 <body>
 	<?php
 		$h1 = "Formulaire du groupe";
@@ -33,6 +24,8 @@ if (isset($_GET['id_groupe'])) {
 		?>
 		<div class="col-10 item ">
 			<form id="form_groupe" method="POST" action="save_groupe.php">
+                <p><i>Les champs suivis d'un * sont obligatoires</i></p>
+                <div id="error">Veuillez vérifier que tous les champs obligatoires ont bien été saisis</div>
 				<fieldset>
 
 					<input type="hidden" name="id" id="id" value="<?=isset($_GET["id_groupe"]) ? $_GET["id_groupe"] : "" ?>">
@@ -72,5 +65,6 @@ if (isset($_GET['id_groupe'])) {
 			</form>
 		</div>
 	</main>
+    <script type="text/javascript" src="js/groupe.js"></script>
 </body>
 </html>

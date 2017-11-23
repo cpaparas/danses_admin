@@ -134,7 +134,7 @@ include('header_technique.php');
 					</div>
 					<div class="form-group">
 						<label for="commentaires">Commentaires :</label>
-						<textarea class="form-control" rows="5" id="commentaires" name="commentaires"></textarea>
+						<textarea class="form-control" rows="5" id="commentaires" name="commentaires"><?= isset($profile['commentaire'])  ? $profile['commentaire'] : '' ?></textarea>
 					</div> 
 					<input type="submit" name="submit_profile" value="Enregistrer">
 				</fieldset>
