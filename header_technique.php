@@ -13,7 +13,6 @@
 	<link href="https://fonts.googleapis.com/css?family=GFS+Didot|Hammersmith+One" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/tables.css">
-	<link rel="stylesheet" href="css/transverse.css">
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
