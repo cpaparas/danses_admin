@@ -25,7 +25,7 @@ header{
 
 h1{
 	font-size: 2em;
-
+	padding: 25px 0px;
 }
 
 /*******************************main***************************/
@@ -64,3 +64,18 @@ margin: 0 auto;
 display: inline-block;
 
 }
+
+.btn {
+	padding : 10px;
+	margin: 10px 5px;
+}
+.right {
+	float: right;
+}
+#error {
+	display:none;
+	color:red;
+	font-style: italic;
+	font-weight: bolder;
+}
+

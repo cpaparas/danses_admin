@@ -5,7 +5,7 @@ $query = $pdo->prepare('SELECT * FROM `profile`');
 $query->execute();
 $profiles = $query->fetchAll(PDO::FETCH_ASSOC);
 
-$title = "Gestionnaire de danse - Formulaire de profile";
+$title = "Gestionnaire de danse - Liste des profiles";
 include('header_technique.php');
 ?>
 <body>
