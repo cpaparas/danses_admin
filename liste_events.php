@@ -15,7 +15,7 @@ include('header_technique.php');
 ?>
 <body>
 <?php
-$h1 = "Liste des cours";
+$h1 = "Liste des événements";
 include('header.php');
 ?>
 <main>
@@ -49,7 +49,7 @@ include('header.php');
             ?>
             </tbody>
         </table>
-        <input class="btn right" type="button" onclick="window.location.href='form_cours.php'" value="Créer un cours" />
+        <input class="btn right" type="button" onclick="window.location.href='form_event.php'" value="Créer un événement" />
     </div>
 </main>
 </body>

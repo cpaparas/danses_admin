@@ -4,6 +4,7 @@
     <a href="profiles_liste.php">Profiles</a>
     <a href="cours_liste.php">Cours</a>
     <a href="liste_events.php">Evénements</a>
+    <a href="contact_liste.php">Contacts</a>
     <a href="calendar.php">Calendrier</a>
 </nav>
 	

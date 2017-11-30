@@ -4,7 +4,7 @@ include('header_technique.php');
 ?>
 <body>
 <?php
-$h1 = "Bienvenue sur le gestionnaire de danse";
+$h1 = "Calendrier des Cours / Evénements";
 include('header.php');
 ?>
 <main>
@@ -15,9 +15,9 @@ include('header.php');
 
     <div class="col-10 item ">
         <div id='calendar'></div>
+        <input class="btn right" type="button" onclick="window.location.href='form_cours.php'" value="Créer un cours" />
+        <input class="btn right" type="button" onclick="window.location.href='form_event.php'" value="Créer un événement" />
     </div>
-    <input class="btn" type="button" onclick="window.location.href='form_cours.php'" value="Créer un cours" />
-    <input class="btn" type="button" onclick="window.location.href='form_event.php'" value="Créer un événement" />
 </main>
 <footer>
 
@@ -50,21 +50,5 @@ include('header.php');
     });
 
 </script>
-<style>
-
-    body {
-        padding: 0;
-        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-        font-size: 14px;
-    }
-
-    #calendar {
-        max-width: 900px;
-        margin: 0 auto;
-    }
-    .fc-event, .fc-event:hover {
-        color: #fff !important;
-    }
-</style>
 </body>
 </html>
