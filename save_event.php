@@ -1,8 +1,9 @@
 <?php
 require('database.php');
+
 if ($_POST["id"] != "")
 {
-    $query = $pdo->prepare('UPDATE `evenement` SET `titre`=? , `date_debut`=? , `date_fin`=? , `description`=? , `lieu`=? , `adresse`=? , `code_postal`=? , `ville`=? , `pays`=? , `nombre_danseurs`=? , `programme`=? , `type`=? , `costumes`=? , `id_prof`=? WHERE id =?'
+    $query = $pdo->prepare('UPDATE `evenement` SET `titre`=? , `date_debut`=? , `date_fin`=? , `description`=? , `lieu`=? , `adresse`=? , `code_postal`=? , `ville`=? , `pays`=? , `nombre_danseurs`=? , `programme`=? , `type`=? , `costumes`=? , `id_prof`=? , `id_contact`=? WHERE id =?'
     );
     $query->execute(array(
         $_POST['titre'],
@@ -19,10 +20,11 @@ if ($_POST["id"] != "")
         $_POST['type'],
         $_POST['costumes'],
         $_POST['id_prof'],
+        $_POST['id_contact'],
         $_POST['id']
     ));
     if ($_POST["participants"]) {
-        $queryDelete = $pdo->prepare('DELETE FROM `event_participation` WHERE id_cours=?');
+        $queryDelete = $pdo->prepare('DELETE FROM `event_participation` WHERE id_event=?');
         $queryDelete->execute(array($_POST["id"]));
 
 
@@ -35,7 +37,7 @@ if ($_POST["id"] != "")
 }
 else {
 
-    $query = $pdo->prepare('INSERT INTO `evenement` (`titre`, `date_debut`, `date_fin`, `description`, `lieu`, `adresse`, `code_postal`, `ville`, `pays`, `nombre_danseurs`, `programme`, `type`, `costumes`, `id_prof`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+    $query = $pdo->prepare('INSERT INTO `evenement` (`titre`, `date_debut`, `date_fin`, `description`, `lieu`, `adresse`, `code_postal`, `ville`, `pays`, `nombre_danseurs`, `programme`, `type`, `costumes`, `id_prof`, `id_contact`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
     );
     $query->execute(array(
         $_POST['titre'],
@@ -51,7 +53,8 @@ else {
         $_POST['programme'],
         $_POST['type'],
         $_POST['costumes'],
-        $_POST['id_prof']
+        $_POST['id_prof'],
+        $_POST['id_contact']
     ));
 
     if ($_POST["participants"]) {

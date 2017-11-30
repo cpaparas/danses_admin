@@ -2,17 +2,31 @@
 require('database.php');
 
 if (isset($_GET['id_event'])) {
-    $query = $pdo->prepare('SELECT * FROM cours WHERE id =?');
+    $query = $pdo->prepare('SELECT * FROM evenement WHERE id =?');
 
     $query->execute([$_GET['id_event']]);
 
     $event = $query->fetch(PDO::FETCH_ASSOC);
+
+    $queryParticipants = $pdo->prepare('SELECT * FROM event_participation WHERE id_event =?');
+    $queryParticipants->execute([$_GET['id_event']]);
+
+    $aParticipants = $queryParticipants->fetchAll(PDO::FETCH_ASSOC);
 
 }
 
 $queryProfs = $pdo->prepare('SELECT id, CONCAT(nom, \' \', prenom) AS nom FROM `profile` WHERE professeur = 1');
 $queryProfs->execute();
 $aProfs = $queryProfs->fetchAll(PDO::FETCH_ASSOC);
+
+$queryContats = $pdo->prepare('SELECT id, CONCAT(nom, \' \', prenom) AS nom FROM `contact`');
+$queryContats->execute();
+$aContacts = $queryContats->fetchAll(PDO::FETCH_ASSOC);
+
+
+$queryDanseurs = $pdo->prepare('SELECT id, CONCAT(nom, \' \', prenom) AS nom FROM `profile`');
+$queryDanseurs->execute();
+$aDanseurs = $queryDanseurs->fetchAll(PDO::FETCH_ASSOC);
 
 $aType = array();
 $aType[1] = "Représentation";
@@ -75,6 +89,23 @@ include('header.php');
                     </select>
                 </div>
                 <div class="form-group">
+                    <label for="id_contact">Contact :</label>
+                    <select id="id_contact" name="id_contact" class='form-control'>
+                        <option value="">---------------</option>
+                        <?php
+                        if ($aContacts) {
+                            foreach ($aContacts as $contact) {
+                                echo '<option value="'.$contact['id'].'" ';
+                                if (isset($event["id_contact"]) && $contact['id'] == $event["id_contact"]) {
+                                    echo "selected='selected'";
+                                }
+                                echo '>'.$contact['nom'].'</option>';
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="date_debut">Date de début * :</label>
                     <input class='form-control' type="date" name="date_debut" id="date_debut" size="50" value="<?= isset($event['date_debut']) ? $event['date_debut'] : '' ?>">
                 </div>
@@ -117,6 +148,38 @@ include('header.php');
                 <div class="form-group">
                     <label for="costumes">Costumes :</label>
                     <textarea class="form-control" rows="5" id="costumes" name="costumes"><?= isset($event['costumes'])  ? $event['costumes'] : '' ?></textarea>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <label for="participants[]">Danseurs :</label>
+                    <?php
+                        $i = 0;
+                        echo "<table id='participants_table'>";
+                        if ($aDanseurs) {
+                            foreach ($aDanseurs as $danseur) {
+                                if ($i == 0) {
+                                    echo "<tr>";
+                                }
+                                //echo "<td>".$danseur['nom']."</td>";
+                                echo '<td><input type="checkbox" value="'.$danseur['id'].'" ';
+                                if (isset($aParticipants)) {
+                                    foreach ($aParticipants as $part) {
+                                        if ($danseur['id'] == $part['id_profile']) {
+                                            echo "checked='checked'";
+                                        }
+                                    }
+                                }
+                                echo 'id="participants[]" name="participants[]"> '.$danseur['nom'].'</td>';
+                                $i++;
+
+                                if ($i == 3) {
+                                    echo "</tr>";
+                                    $i = 0;
+                                }
+                            }
+                        }
+                        echo "</table>";
+                    ?>
                 </div>
                 <input type="submit" name="submit_profile" value="Enregistrer">
             </fieldset>
