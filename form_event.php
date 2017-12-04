@@ -45,7 +45,7 @@ include('header.php');
     include('nav.php');
     ?>
     <div class="col-10 item ">
-        <form id="form_profile" method="POST" action="save_event.php">
+        <form id="form_event" method="POST" action="save_event.php">
             <p><i>Les champs suivis d'un * sont obligatoires</i></p>
             <div id="error">Veuillez vérifier que tous les champs obligatoires ont bien été saisis</div>
             <fieldset>
@@ -55,7 +55,7 @@ include('header.php');
                     <input class='form-control' type="text" name="titre" id="titre" size="50" value="<?= isset($event['titre']) ? $event['titre'] : '' ?>">
                 </div>
                 <div class="form-group">
-                    <label for="type">Type d'événement :</label>
+                    <label for="type">Type d'événement * :</label>
                     <select id="type" name="type" class='form-control'>
                         <option value="">---------------</option>
                         <?php
@@ -186,6 +186,6 @@ include('header.php');
         </form>
     </div>
 </main>
-<script type="text/javascript" src="js/cours.js"></script>
+<script type="text/javascript" src="js/event.js"></script>
 </body>
 </html>

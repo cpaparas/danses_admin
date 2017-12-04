@@ -33,7 +33,7 @@ include('header.php');
     include('nav.php');
     ?>
     <div class="col-10 item ">
-        <form id="form_profile" method="POST" action="save_cours.php">
+        <form id="form_cours" method="POST" action="save_cours.php">
             <p><i>Les champs suivis d'un * sont obligatoires</i></p>
             <div id="error">Veuillez vérifier que tous les champs obligatoires ont bien été saisis</div>
             <fieldset>

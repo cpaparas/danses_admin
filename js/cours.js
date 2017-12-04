@@ -28,3 +28,16 @@ jQuery("#id_groupe").change(function(){
         });
     }
 });
+
+jQuery("#form_cours").submit(function() {
+    var date = jQuery("#form_cours #date").val();
+
+    if (date == "") {
+        jQuery("#form_cours #error").show();
+        location.href = '#error';
+        return false;
+    } else {
+        return true;
+    }
+
+});
