@@ -22,7 +22,7 @@ jQuery(".checkbox #cb_professeur").change(function(){
 
 jQuery("#form_profile").submit(function() {
 	var nom = jQuery("#form_profile #nom").val();
-    var prenom = jQuery("#form_profile #prenomnom").val();
+    var prenom = jQuery("#form_profile #prenom").val();
     var email = jQuery("#form_profile #email").val();
 	if (nom == "" || prenom == "" || email == "") {
         jQuery("#form_profile #error").show();

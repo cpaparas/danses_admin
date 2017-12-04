@@ -23,7 +23,7 @@ include('header.php');
     include('nav.php');
     ?>
     <div class="col-10 item ">
-        <form id="form_profile" method="POST" action="save_contact.php">
+        <form id="form_contact" method="POST" action="save_contact.php">
             <p><i>Les champs suivis d'un * sont obligatoires</i></p>
             <div id="error">Veuillez vérifier que tous les champs obligatoires ont bien été saisis</div>
             <fieldset>
@@ -61,6 +61,6 @@ include('header.php');
         </form>
     </div>
 </main>
-<script type="text/javascript" src="js/cours.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
 </body>
 </html>
