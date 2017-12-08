@@ -13,7 +13,7 @@ h1, h2, h3{
 /*******************************header***************************/
 body{
 	width: 100%;
-	background-color: #f2f2f2;
+	background-color: #f9f9f9;
 
 }
 
@@ -25,14 +25,14 @@ header{
 
 h1{
 	font-size: 2em;
-
+	padding: 25px 0px;
 }
 
 /*******************************main***************************/
 
 	
 main {
-background-color: #f2f2f2;
+background-color: #f9f9f9;
 margin: 0 auto;
 }			
 
@@ -63,4 +63,27 @@ padding: 30px;
 margin: 0 auto;
 display: inline-block;
 
+}
+
+.btn {
+	padding : 10px;
+	margin: 10px 5px;
+	background-color: #27477f;
+	color: white;
+}
+.right {
+	float: right;
+}
+#error {
+	display:none;
+	color:red;
+	font-style: italic;
+	font-weight: bolder;
+}
+#calendar {
+	max-width: 100%;
+	margin: 0 auto;
+}
+.fc-event, .fc-event:hover {
+	color: #fff !important;
 }

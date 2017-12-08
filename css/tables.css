@@ -11,3 +11,8 @@ table caption {
 	font-weight: bold;
 	padding-bottom: 2%;
 }
+
+#participants_table, #participants_table tr td  {
+	border: none;
+	text-align: left;
+}
