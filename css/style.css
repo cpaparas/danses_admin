@@ -87,3 +87,29 @@ display: inline-block;
 .fc-event, .fc-event:hover {
 	color: #fff !important;
 }
+
+#chart {
+	width: 95%;
+	height: 500px;
+}
+
+#chart rect {
+	fill: #43669e;
+}
+
+#chart text {
+	fill: #43669e;
+	font: 10px sans-serif;
+	text-anchor: end;
+}
+
+.axis text {
+	font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: #43669e;
+	shape-rendering: crispEdges;
+}

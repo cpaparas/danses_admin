@@ -31,6 +31,7 @@ $aDanseurs = $queryDanseurs->fetchAll(PDO::FETCH_ASSOC);
 $aType = array();
 $aType[1] = "Représentation";
 $aType[2] = "Défilé";
+$aType[3] = "Défilé et représentation";
 $title = "Gestionnaire de danse - Formulaire d'événement";
 include('header_technique.php');
 ?>

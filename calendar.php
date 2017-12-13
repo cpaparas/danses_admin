@@ -38,7 +38,7 @@ include('header.php');
             dataType: "json"
         }).done(function(data) {
             jQuery('#calendar').fullCalendar({
-                defaultDate: '2017-11-12',
+                defaultDate: Date.now(),
                 locale: initialLocaleCode,
                 editable: false,
                 eventLimit: true, // allow "more" link when too many events
