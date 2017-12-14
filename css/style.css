@@ -113,3 +113,25 @@ display: inline-block;
 	stroke: #43669e;
 	shape-rendering: crispEdges;
 }
+
+.arc text {
+	font: 14px sans-serif;
+	text-anchor: middle;
+	fill: #FFFFFF;
+}
+
+.arc path {
+	stroke: #fff;
+}
+#chart_bar {
+	position: relative;
+	padding: 10px 10px 20px 10px;
+	margin-bottom: 20px;
+	width:95%;
+	height: 400px;
+}
+#chart_bar .bar {
+	background-color: #43669e;
+	height: 20px;
+	margin-top: 2px;
+}

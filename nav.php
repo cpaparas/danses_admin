@@ -7,5 +7,6 @@
     <a href="contact_liste.php">Contacts</a>
     <a href="calendar.php">Calendrier</a>
     <a href="presences.php">Présences</a>
+    <a href="presences_par_groupe.php">Présences par groupe</a>
 </nav>
 	
