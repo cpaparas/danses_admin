@@ -1,4 +1,9 @@
 <?php
+if ( ! session_id() ) @ session_start();
+
+    if (!isset($_SESSION["CONNECTED_USER"])) {
+        header('Location: login.php');
+    }
 	if (! isset($title)) {
 		$title = "Gestionnaire de danse - Accueil";
 	}

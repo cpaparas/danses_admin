@@ -125,7 +125,7 @@ display: inline-block;
 }
 #chart_bar {
 	position: relative;
-	padding: 10px 10px 20px 10px;
+	padding: 10px 10px 20px 50px;
 	margin-bottom: 20px;
 	width:95%;
 	height: 400px;

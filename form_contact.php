@@ -56,7 +56,7 @@ include('header.php');
                     <label for="commentaires">Commentaires :</label>
                     <textarea class="form-control" rows="5" id="commentaires" name="commentaires"><?= isset($event['commentaires'])  ? $event['commentaires'] : '' ?></textarea>
                 </div>
-                <input type="submit" name="submit_profile" value="Enregistrer">
+                <input type="submit" name="submit_contact" value="Enregistrer">
             </fieldset>
         </form>
     </div>

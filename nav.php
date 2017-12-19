@@ -5,8 +5,10 @@
     <a href="cours_liste.php">Cours</a>
     <a href="liste_events.php">Evénements</a>
     <a href="contact_liste.php">Contacts</a>
+    <a href="users_liste.php">Utilisateurs</a>
     <a href="calendar.php">Calendrier</a>
     <a href="presences.php">Présences</a>
     <a href="presences_par_groupe.php">Présences par groupe</a>
+    <a href="groupes_pie.php">Affluence par groupe</a>
 </nav>
 	
