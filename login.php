@@ -44,7 +44,7 @@ include('header.php');
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe * :</label>
-                    <input class='form-control' type="text" name="password" id="password" size="50" value="">
+                    <input class='form-control' type="password" name="password" id="password" size="50" value="">
                 </div>
                 <input class="btn" type="submit" name="login" value="Connexion">
 

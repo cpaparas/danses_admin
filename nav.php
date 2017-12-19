@@ -10,5 +10,6 @@
     <a href="presences.php">Présences</a>
     <a href="presences_par_groupe.php">Présences par groupe</a>
     <a href="groupes_pie.php">Affluence par groupe</a>
+    <a href="logout.php">Déconnexion</a>
 </nav>
 	
