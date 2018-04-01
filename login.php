@@ -37,7 +37,7 @@ include('header.php');
             <p><i>Les champs suivis d'un * sont obligatoires</i></p>
             <div id="error">Veuillez vérifier que tous les champs obligatoires ont bien été saisis</div>
             <fieldset>
-                <input type="hidden" name="referer" id="referer" value="<?=isset($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : "/" ?>">
+                <input type="hidden" name="referer" id="referer" value="<?=isset($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : $_SERVER["HTTP_HOST"].$_SERVER["CONTEXT_PREFIX"] ?>">
                 <div class="form-group">
                     <label for="username">Utilisateur * :</label>
                     <input class='form-control' type="text" name="username" id="username" size="50" value="">

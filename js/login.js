@@ -9,7 +9,7 @@ jQuery("#login").submit(function() {
     } else {
         jQuery.ajax({
             method: "GET",
-            url: "../ajax/login.php",
+            url: "ajax/login.php",
             data: {username: username, password: password}
         }).done(function(response) {
             if (response != "nok") {

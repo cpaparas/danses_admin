@@ -6,9 +6,9 @@ $queryGrpe->execute();
 $groupes = $queryGrpe->fetchAll(PDO::FETCH_ASSOC);
 
 if (isset($_GET["id_groupe"])) {
-    $url = "http://danses_admin.dev/ajax/get_presences_by_day.php?id_groupe=".$_GET["id_groupe"];
+    $url = "ajax/get_presences_by_day.php?id_groupe=".$_GET["id_groupe"];
 } else {
-    $url = "http://danses_admin.dev/ajax/get_presences_by_day.php";
+    $url = "ajax/get_presences_by_day.php";
 }
 
 $title = "Gestionnaire de danse - Présences";
@@ -51,7 +51,7 @@ include('header.php');
         .outerRadius(radius - 40)
         .innerRadius(radius - 40);
 
-    d3.csv("http://danses_admin.dev/ajax/get_groupes_attendance.php", function(d) {
+    d3.csv("ajax/get_groupes_attendance.php", function(d) {
         d.danseurs = +d.danseurs;
         return d;
     }, function(error, data) {

@@ -34,7 +34,7 @@ include('header.php');
         var initialLocaleCode = 'fr';
         jQuery.ajax({
             method: "POST",
-            url: "../ajax/get_events.php",
+            url: "ajax/get_events.php",
             dataType: "json"
         }).done(function(data) {
             jQuery('#calendar').fullCalendar({
